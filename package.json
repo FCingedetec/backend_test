@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/index.js",
+    "start": "ts-node dist/index.js",
     "dev": "nodemon src/index.ts",
     "build": "npx tsc",
     "typeorm": "typeorm-ts-node-commonjs"
@@ -24,7 +24,7 @@
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^0.3.7",
-     "typescript": "^5.8.3"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
