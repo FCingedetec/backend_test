@@ -1,14 +1,14 @@
 import * as dotenv from 'dotenv';
-dotenv.config();
-
-import { testDBConnection } from './database/database';
+import { testMySQLConnection } from './database/database.mysql';
 import express, { Application } from "express";
 import morgan from 'morgan';
 import helmet from "helmet";
 import cors from 'cors';
+dotenv.config();
 
 // Routes
 import UserRoutes from './routes/user.routes';
+
 
 export class App {
     app: Application;
@@ -37,7 +37,8 @@ export class App {
 
     async listen() {
         try {
-            await testDBConnection();
+            await testMySQLConnection();
+            //await testDBConnection(); //SQL Server Database Connection
             this.app.listen(this.app.get("port"), () => {
                 console.log(`✅ Server running on port ${this.app.get("port")}`);
             });

@@ -3,7 +3,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 
-export const sqlConfig = {
+export const sqlConfigSQLSERVER = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
@@ -16,9 +16,9 @@ export const sqlConfig = {
   }
 };
 
-export async function testDBConnection() {
+export async function testSQLSERVERConnection() {
   try {
-    const pool = await sql.connect(sqlConfig);
+    const pool = await sql.connect(sqlConfigSQLSERVER);
     console.log('✅ Database Conected.');
     await sql.close();
   } catch (err) {

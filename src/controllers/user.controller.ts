@@ -1,5 +1,8 @@
 import {Request, Response} from "express";
-import {sqlConfig} from "../database/database";
+import { sqlConfigMYSQL } from "../database/database.mysql";
+
+/*
+import {sqlConfig} from "../database/database.sqlserver";
 const sql = require('mssql')
 
 export const fetchAllUsers = async (req: Request, res: Response) => {
@@ -13,4 +16,14 @@ export const fetchAllUsers = async (req: Request, res: Response) => {
         sql.close(); // Asegúrate de cerrar la conexión en finally
     }
 }
+*/
+export const fetchAllUsers = async (req: Request, res: Response) => {
+    try {
+      const [rows] = await sqlConfigMYSQL.query('SELECT * FROM users');
+      res.json(rows);
+    } catch (error: any) {
+      console.error('❌ MySQL query error:', error);
+      res.status(500).send(error.message);
+    }
+  };
 

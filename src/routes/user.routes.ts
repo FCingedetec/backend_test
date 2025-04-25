@@ -4,4 +4,4 @@ import { fetchAllUsers } from '../controllers/user.controller';
 const router = express.Router();
 router.get('/users', fetchAllUsers);
 
-export = router;
+export default router;

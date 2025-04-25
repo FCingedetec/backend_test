@@ -24,3 +24,22 @@
         console.log(err);
       }}
     )
+
+    # ********* SQL SERVER PORT *******/
+
+PORT=3000
+DB_HOST_SQLSERVER=IDTMX-LT-0017
+DB_NAME_SQLSERVER=test
+DB_USER_SQLSERVER=testidt
+DB_PASSWORD_SQLSERVER=Sistemas2025*
+DB_PORT_SQLSERVER=1433
+
+# ******** MYSQL CONFIG *******/
+DB_HOST_MYSQL=localhost
+DB_NAME_MYSQL=test
+DB_USER_MYSQL=testidt
+DB_PASSWORD_MYSQL=Sistemas2025*
+
+
+JWTSECRET=Secret
+JWTSECRETRESET=Secret

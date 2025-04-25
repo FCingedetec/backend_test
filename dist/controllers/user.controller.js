@@ -1,20 +1,28 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchAllUsers = void 0;
-const database_1 = require("../database/database");
-const sql = require('mssql');
-const fetchAllUsers = async (req, res) => {
+import { mysqlPool } from "../database/database.sqlserver";
+/*
+import {sqlConfig} from "../database/database.sqlserver";
+const sql = require('mssql')
+
+export const fetchAllUsers = async (req: Request, res: Response) => {
     try {
-        const pool = await sql.connect(database_1.sqlConfig);
+        const pool = await sql.connect(sqlConfig);
         const result = await pool.request().query('SELECT * FROM users'); // Usa await aquí
         res.json(result.recordset); // Solo los datos
-    }
-    catch (error) {
+    } catch (error: any) {
         res.status(500).send(error.message);
-    }
-    finally {
+    } finally {
         sql.close(); // Asegúrate de cerrar la conexión en finally
     }
+}
+*/
+export const fetchAllUsers = async (req, res) => {
+    try {
+        const [rows] = await mysqlPool.query('SELECT * FROM users');
+        res.json(rows);
+    }
+    catch (error) {
+        console.error('❌ MySQL query error:', error);
+        res.status(500).send(error.message);
+    }
 };
-exports.fetchAllUsers = fetchAllUsers;
 //# sourceMappingURL=user.controller.js.map
