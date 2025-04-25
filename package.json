@@ -6,7 +6,6 @@
   "scripts": {
     "start": "ts-node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "build": "npx tsc",
     "typeorm": "typeorm-ts-node-commonjs"
   },
   "keywords": [],
