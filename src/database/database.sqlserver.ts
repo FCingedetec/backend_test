@@ -19,10 +19,10 @@ export const sqlConfigSQLSERVER = {
 export async function testSQLSERVERConnection() {
   try {
     const pool = await sql.connect(sqlConfigSQLSERVER);
-    console.log('✅ Database Conected.');
+    console.log('Database Conected.');
     await sql.close();
   } catch (err) {
-    console.error('❌ Error to Database Connection:', err);
+    console.error('Error to Database Connection:', err);
   }
 }
 

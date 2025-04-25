@@ -17,10 +17,10 @@ export async function testMySQLConnection() {
   try {
     const connection = await sqlConfigMYSQL.getConnection();
     await connection.ping();
-    console.log('✅ MySQL Database Connected.');
+    console.log('MySQL Database Connected.');
     connection.release(); // Muy importante con pools
   } catch (err) {
-    console.error('❌ Error connecting to MySQL:', err);
+    console.error('Error connecting to MySQL:', err);
   }
 }
 

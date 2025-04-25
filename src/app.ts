@@ -40,10 +40,10 @@ export class App {
             await testMySQLConnection();
             //await testDBConnection(); //SQL Server Database Connection
             this.app.listen(this.app.get("port"), () => {
-                console.log(`✅ Server running on port ${this.app.get("port")}`);
+                console.log(`Server running on port ${this.app.get("port")}`);
             });
         } catch (error) {
-            console.error("❌ No se pudo iniciar el servidor debido a un error:", error);
+            console.error("No se pudo iniciar el servidor debido a un error:", error);
         }
     }
 }

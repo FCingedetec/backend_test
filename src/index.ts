@@ -11,5 +11,5 @@ async function main() {
 }
 
 main().catch((err) => {
-  console.error("❌ Error al iniciar la aplicación:", err);
+  console.error("Error al iniciar la aplicación:", err);
 });

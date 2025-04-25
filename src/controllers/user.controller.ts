@@ -22,7 +22,7 @@ export const fetchAllUsers = async (req: Request, res: Response) => {
       const [rows] = await sqlConfigMYSQL.query('SELECT * FROM users');
       res.json(rows);
     } catch (error: any) {
-      console.error('❌ MySQL query error:', error);
+      console.error('MySQL query error:', error);
       res.status(500).send(error.message);
     }
   };
