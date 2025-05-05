@@ -8,6 +8,7 @@ dotenv.config();
 
 // Routes
 import UserRoutes from './routes/user.routes';
+import AuthRoutes from './routes/auth.routes';
 
 
 export class App {
@@ -33,6 +34,7 @@ export class App {
 
     routes() {
         this.app.use(UserRoutes);
+        this.app.use(AuthRoutes);
     }
 
     async listen() {
